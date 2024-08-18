@@ -1,8 +1,15 @@
+import PokemonCardDetails from '@/components/pokemon/PokemonCardDetails'
 import React from 'react'
+import { fetchPokemonCharactersData } from '@/utils/api/page'
 
-const page = () => {
+const page = async ({ params }) => {
+  const {PokemonId} = params
+  const characterDetails = await fetchPokemonCharactersData(`${PokemonId}`)
+  
   return (
-    <div>page</div>
+    <>
+    <PokemonCardDetails details={characterDetails}/>
+    </>
   )
 }
 
