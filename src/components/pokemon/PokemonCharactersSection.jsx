@@ -8,7 +8,7 @@ const PokemonCharactersSection = () => {
   
   const fetchData = async () => {
     try {
-      const data = await fetchPokemonCharactersData('?offset=20&limit=20');
+      const data = await fetchPokemonCharactersData('?limit=55');
       setPokemonCharacters(data.results);
     } catch (error) {
       console.error('Failed to fetch data:', error);
