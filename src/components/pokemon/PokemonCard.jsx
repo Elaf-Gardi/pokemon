@@ -5,11 +5,6 @@ import Link from "next/link"
 
 const PokemonCard = ({ pokemon }) => {
   const [pokemonDetails, setPokemonDetails] = useState(null)
-  const [isFlipped, setIsFlipped] = useState(false)
-
-  const handleFlip = () => {
-    setIsFlipped(!isFlipped)
-  }
 
   useEffect(() => {
     const fetchPokemonDetails = async () => {
@@ -36,7 +31,7 @@ const PokemonCard = ({ pokemon }) => {
       : colorsType[pokemonType[0]]
 
   return (
-    <Link href="/">
+    <Link href={`/pokemon/${pokemonDetails.id}`}>
     <div
       className="w-64 h-32 rounded-lg mb-2 flex items-center justify-center"
       style={{ backgroundColor: cardBackgroundColor }}
@@ -67,10 +62,10 @@ const PokemonCard = ({ pokemon }) => {
         <img
           src={pokemonDetails.sprites.front_shiny}
           alt={pokemonDetails.name}
-          className="absolute top-0 right-0"
+          className="absolute  w-24 h-24"
           style={{ zIndex: 1 }}
         />
-        <div className="absolute top-0 right-0 w-full h-full pokeballBackgroundImage" />
+        <div className="absolute top-0 -right-4 w-full h-full pokeballBackgroundImage" />
       </div>
     </div>
     </Link>
