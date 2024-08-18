@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useState } from "react"
-import { fetchPokemonCharactersData } from "@/app/api/page"
+import { fetchPokemonCharactersData } from "@/utils/api/page"
 import PokemonCharactersList from "./PokemonCharactersList"
 
 const PokemonCharactersSection = () => {
@@ -20,7 +20,7 @@ const PokemonCharactersSection = () => {
   }, [])
 
   return (
-    <div>
+    <div className="">
       <PokemonCharactersList pokemonCharacters={pokemonCharacters}/>
     </div>
   )
