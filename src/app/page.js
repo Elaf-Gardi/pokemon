@@ -2,8 +2,8 @@ import PokemonCharactersSection from "@/components/pokemon/PokemonCharactersSect
 
 export default function Home() {
   return (
-    <>
+    <div className="mr-96 bg-[#f9faff]">
       <PokemonCharactersSection />
-    </>
+    </div>
   )
 }
